@@ -32,9 +32,8 @@ void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
-//  musicPlayer.sineTest(0x44, 500);
 
-//  musicPlayer.playFullFile("track001.mp3");
+  musicPlayer.playFullFile("track001.mp3");
 }
 
 void loop() {
@@ -49,7 +48,7 @@ void loop() {
     newState = digitalRead(BUTTON_PIN);
     if (newState == HIGH) {
       musicPlayer.stopPlaying();
-//      musicPlayer.sineTest(0x44, 500);
+      
       colorWipe(strip.Color(0, 255, 0), 50);
     } else {
       colorWipe(strip.Color(0, 0, 0), 50);
